@@ -35,7 +35,6 @@ public class CsvFileHandler {
 
     public static void writeDataPointsToCsv(Map<String, Double> recordsWithoutOutliers){
         String eol = System.getProperty("line.separator");
-        Map<String, Double> records = new LinkedHashMap<>();
         recordsWithoutOutliers.entrySet().stream()
                 .sorted(Map.Entry.<String, Double>comparingByValue())
                 .forEachOrdered(x -> records.put(x.getKey(), x.getValue()));
